@@ -402,9 +402,9 @@ function! s:vim_lsp_install_server(ft, command, bang) abort
     call lsp_settings#utils#error('Server could not be installed. See :messages for details.')
     return
   endif
-  if empty(a:bang) && confirm(printf('Install %s ?', l:entry[0]), "&Yes\n&Cancel") !=# 1
-    return
-  endif
+  " if empty(a:bang) && confirm(printf('Install %s ?', l:entry[0]), "&Yes\n&Cancel") !=# 1
+  "   return
+  " endif
   let l:server_install_dir = lsp_settings#servers_dir() . '/' . l:entry[0]
   if has('win32')
     let l:server_install_dir = substitute(l:server_install_dir, '/', '\', 'g')
